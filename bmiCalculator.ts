@@ -3,4 +3,4 @@ const calculateBMI = (height: number, weight: number): string => {
   return bmi.toFixed(2);
 };
 
-console.log(calculateBMI(1.75, 70)); // Example usage
+console.log(calculateBMI(1.70, 65)); // Example usage
