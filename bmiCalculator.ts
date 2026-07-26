@@ -6,7 +6,7 @@ const calculateBMI = (height: number, weight: number): string => {
   if (bmi < 18.5) {
     return `BMI: ${bmiResult} - Underweight`;
   } else if (bmi >= 18.5 && bmi < 24.9) {
-    return `BMI: ${bmiResult} - Normal weight`;
+    return `BMI: ${bmiResult} - Normal range`;
   } else if (bmi >= 25 && bmi < 29.9) {
     return `BMI: ${bmiResult} - Overweight`;
   } else {
