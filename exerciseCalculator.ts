@@ -12,7 +12,7 @@ const calculateExercises = (dailyExercises: number[], target: number) => {
     explanation = "Excellent! You have met your target.";
   } else if (averageHours >= target * 0.8) {
     rating = 2;
-    explanation = "Good job! You are close to meeting your target.";
+    explanation = "Not too bad! You could be better.";
   } else {
     rating = 1;
     explanation = "Keep trying! You need to improve your exercise habits.";
