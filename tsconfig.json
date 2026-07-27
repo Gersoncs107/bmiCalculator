@@ -1,5 +1,10 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true,
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "node10",
+    "strict": true,
+    "esModuleInterop": true,
+    "types": ["node"]
   }
 }
