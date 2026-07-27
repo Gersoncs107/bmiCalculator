@@ -28,4 +28,8 @@ const calculateExercises = (dailyExercises: number[], target: number) => {
     explanation: explanation
   };
 }
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2)); // Example usage: daily exercises in hours, target in hours
+
+const dailyExercises = process.argv.slice(2, -1).map(Number);
+const target = Number(process.argv[process.argv.length - 1]);
+
+console.log(calculateExercises(dailyExercises, target)); // Example usage: daily exercises in hours, target in hours
