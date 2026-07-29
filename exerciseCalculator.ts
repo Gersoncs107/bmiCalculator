@@ -1,3 +1,13 @@
+interface ExerciseResult {
+  days: number;
+  trainingDays: number;
+  target: number;
+  average: number;
+  targetReached: boolean;
+  rating: number;
+  explanation: string;
+}
+
 const calculateExercises = (dailyExercises: number[], target: number) => {
   const totalDays = dailyExercises.length;
   const trainingDays = dailyExercises.filter(day => day > 0).length;
