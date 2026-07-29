@@ -17,4 +17,4 @@ const calculateBMI = (height: number, weight: number): string => {
 const height = Number(process.argv[2]);
 const weight = Number(process.argv[3]);
 
-console.log(calculateBMI(180, 74)); // Example usage: height in cm, weight in kg
+console.log(calculateBMI(height, weight)); // Example usage: height in cm, weight in kg
