@@ -8,6 +8,13 @@ interface ExerciseResult {
   explanation: string;
 }
 
+const parseArguments = (args: string[]): { dailyExercises: number[], target: number } => {
+  if (args.length < 4) throw new Error("Not enough arguments");
+  const dailyExercises = args.slice(2, -1).map(Number);
+  const target = Number(args[args.length - 1]);
+  return { dailyExercises, target };
+}
+
 const calculateExercises = (dailyExercises: number[], target: number): ExerciseResult => {
   const totalDays = dailyExercises.length;
   const trainingDays = dailyExercises.filter(day => day > 0).length;
