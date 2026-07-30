@@ -53,6 +53,9 @@ const calculateExercises = (dailyExercises: number[], target: number): ExerciseR
 try{
   const { dailyExercises, target } = parseArguments(process.argv);
   calculateExercises(dailyExercises, target);
-} catch (error) {
-  console.error("Error:", error.message);
+} catch (error:unknown) {
+  let errorMessage = "Something went wrong.";
+  if (error instanceof Error) {
+    errorMessage += " Error: " + error.message;
+  }
 }
