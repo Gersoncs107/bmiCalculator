@@ -10,9 +10,7 @@ interface ExerciseResult {
 
 const parseArguments = (args: string[]): { dailyExercises: number[], target: number } => {
   if (args.length < 4) throw new Error("Not enough arguments");
-  const dailyExercises = args.slice(2, -1).map(Number);
-  const target = Number(args[args.length - 1]);
-  return { dailyExercises, target };
+  if (args.length > 4) throw new Error("Too many arguments");
 }
 
 const calculateExercises = (dailyExercises: number[], target: number): ExerciseResult => {
