@@ -50,7 +50,8 @@ const calculateExercises = (dailyExercises: number[], target: number): ExerciseR
   };
 }
 
-const dailyExercises = process.argv.slice(2, -1).map(Number);
-const target = Number(process.argv[process.argv.length - 1]);
+try{
+  
+}
 
 console.log(calculateExercises(dailyExercises, target)); // Example usage: daily exercises in hours, target in hours
