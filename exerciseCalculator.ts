@@ -13,9 +13,9 @@ const parseArguments = (args: string[]): { dailyExercises: number[], target: num
   if (args.length > 4) throw new Error("Too many arguments");
 
   if(isNaN(Number(args[2])) || isNaN(Number(args[3]))) {
-    return { dailyExercises: args.slice(2, -1).map(Number), target: Number(args[args.length - 1]) };
-  } else {
     throw new Error("Provided values were not numbers!");
+  } else {
+    return { dailyExercises: args.slice(2, -1).map(Number), target: Number(args[args.length - 1]) };
   }
 }
 
