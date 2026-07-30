@@ -51,7 +51,8 @@ const calculateExercises = (dailyExercises: number[], target: number): ExerciseR
 }
 
 try{
-  
+  const { dailyExercises, target } = parseArguments(process.argv);
+  console.log(calculateExercises(dailyExercises, target)); // Example usage: daily exercises in hours, target in hours
+} catch (error) {
+  console.error("Error:", error.message);
 }
-
-console.log(calculateExercises(dailyExercises, target)); // Example usage: daily exercises in hours, target in hours
