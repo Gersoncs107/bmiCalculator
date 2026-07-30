@@ -10,14 +10,19 @@ interface ExerciseResult {
 
 const parseArguments = (args: string[]): { dailyExercises: number[], target: number } => {
   if (args.length < 4) throw new Error("Not enough arguments");
-  if (args.length > 4) throw new Error("Too many arguments");
 
-  if(isNaN(Number(args[2])) || isNaN(Number(args[3]))) {
+  const values = args.slice(2);
+
+  if (values.some(value => isNaN(Number(value)))) {
     throw new Error("Provided values were not numbers!");
-  } else {
-    return { dailyExercises: args.slice(2, -1).map(Number), target: Number(args[args.length - 1]) };
   }
-}
+
+  const numbers = values.map(Number);
+  const target = numbers[numbers.length - 1];
+  const dailyExercises = numbers.slice(0, -1);
+
+  return { dailyExercises, target };
+};
 
 const calculateExercises = (dailyExercises: number[], target: number): ExerciseResult => {
   const totalDays = dailyExercises.length;
@@ -48,14 +53,15 @@ const calculateExercises = (dailyExercises: number[], target: number): ExerciseR
     rating: rating,
     explanation: explanation
   };
-}
+};
 
-try{
+try {
   const { dailyExercises, target } = parseArguments(process.argv);
-  calculateExercises(dailyExercises, target);
-} catch (error:unknown) {
+  console.log(calculateExercises(dailyExercises, target));
+} catch (error: unknown) {
   let errorMessage = "Something went wrong.";
   if (error instanceof Error) {
     errorMessage += " Error: " + error.message;
   }
+  console.log(errorMessage);
 }
