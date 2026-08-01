@@ -6,7 +6,7 @@ app.get('/hello', (_req, res) => {
 });
 
 app.get('/bmi', (req, res) => {
-
+  res.send('BMI Calculator endpoint is under construction. Please use the command line interface for BMI calculations.');
 })
 
 const PORT = 3003;
