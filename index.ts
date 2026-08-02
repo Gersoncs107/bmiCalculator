@@ -9,8 +9,25 @@ app.get('/hello', (_req, res) => {
 
 app.get('/bmi', (_req, res) => {
   const { height, weight } = _req.query;
-  const bmi = calculateBmi(Number(height), Number(weight));
-  res.json({ weight, height, bmi });
+
+  if (!height || !weight) {
+    return res.status(400).json({ error: 'Height and weight are required' });
+  }
+
+  const heightNumber = Number(height);
+  const weightNumber = Number(weight);
+
+  if (isNaN(heightNumber) || isNaN(weightNumber)) {
+    return res.status(400).json({ error: 'Invalid height or weight values' });
+  }
+
+const bmi = calculateBmi(heightNumber, weightNumber);
+
+res.json({
+    height: heightNumber,
+    weight: weightNumber,
+    bmi
+});
 });
 
 const PORT = 3003;
