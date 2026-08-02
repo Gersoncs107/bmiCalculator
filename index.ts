@@ -21,13 +21,13 @@ app.get('/bmi', (_req, res) => {
     return res.status(400).json({ error: 'Invalid height or weight values' });
   }
 
-const bmi = calculateBmi(heightNumber, weightNumber);
+  const bmi = calculateBmi(heightNumber, weightNumber);
 
-res.json({
+  return res.json({
     height: heightNumber,
     weight: weightNumber,
     bmi
-});
+  });
 });
 
 const PORT = 3003;
