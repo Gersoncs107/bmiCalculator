@@ -14,9 +14,13 @@ const calculateBmi = (height: number, weight: number): string => {
 
 export { calculateBmi };
 
-const height = Number(process.argv[2]);
-const weight = Number(process.argv[3]);
+if (require.main === module) {
+  const height = Number(process.argv[2]);
+  const weight = Number(process.argv[3]);
 
-console.log(calculateBmi(height, weight)); // Example usage: height in cm, weight in kg
-
-export { calculateBmi };
+  if (isNaN(height) || isNaN(weight)) {
+    console.log('Please provide valid height and weight.');
+  } else {
+    console.log(calculateBmi(height, weight));
+  }
+}
