@@ -10,7 +10,6 @@ app.get('/hello', (_req, res) => {
 app.get('/bmi', (req, res) => {
   const { height, weight } = req.query;
 
-  // Verifica se os parâmetros existem
   if (!height || !weight) {
     return res.status(400).json({
       error: 'malformatted parameters'
