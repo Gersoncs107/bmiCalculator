@@ -34,6 +34,8 @@ app.get('/bmi', (req, res) => {
   });
 });
 
+app.post('/exercises', express.json(), (req, res) => {}
+
 const PORT = 3003;
 
 app.listen(PORT, () => {
