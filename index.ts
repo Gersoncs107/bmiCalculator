@@ -42,6 +42,9 @@ app.post('/exercises', express.json(), (req, res) => {
       error: 'parameters missing'
     });
   }
+  const result = calculateExercises(daily_exercises, target);
+  res.json({result});
+
 });
 
 const PORT = 3003;
