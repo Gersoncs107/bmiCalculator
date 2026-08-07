@@ -43,7 +43,7 @@ app.post('/exercises', express.json(), (req, res) => {
     });
   }
   const result = calculateExercises(daily_exercises, target);
-  res.json({result});
+  res.json(result);
 
 });
 
