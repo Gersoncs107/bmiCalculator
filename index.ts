@@ -34,7 +34,15 @@ app.get('/bmi', (req, res) => {
   });
 });
 
-app.post('/exercises', express.json(), (req, res) => {}
+app.post('/exercises', express.json(), (req, res) => {
+  const { daily_exercises, target } = req.body;
+
+  if (!daily_exercises || !target) {
+    return res.status(400).json({
+      error: 'parameters missing'
+    });
+  }
+});
 
 const PORT = 3003;
 
